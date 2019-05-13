@@ -61,7 +61,7 @@ class ConstantContactService extends Component
         if ( !empty($responseObj->results) ) {
             return $this->updateContact($responseObj->results, $listID);
         } else {
-            return $this->addContact($email, $listID, $firstname, $lastname);
+            return $this->addContact($email, $listID, $firstName, $lastName);
         }
 
         return null;
@@ -71,7 +71,7 @@ class ConstantContactService extends Component
      *
      * @return mixed
      */
-    private function addContact($email, $listID, $firstname = '', $lastname = '') {
+    private function addContact($email, $listID, $firstName = '', $lastName = '') {
         $plugin = Plugin::getInstance();
         $settings = $plugin->getSettings();
         $client = new Client($settings->key, $settings->token);
